@@ -19,7 +19,7 @@ const dataModule = (() => {
     function fetchShows(onSuccessCallback) {
 
         $.get(`${API_URL}/shows`, function (showsArray) {
-            console.log(showsArray);
+            console.log("Step",showsArray);
 
             const myShows = showsArray
                 .slice(0, 50)

@@ -7,14 +7,24 @@ const index2 = (() => {
     $.get(`${index2search}`, function (singleShowData) {
         console.log(singleShowData);
         const castNames = [];
+        const seasonsYears = [];
         const listactors = $(".castnames");
+        const seasons = $(".seasons")
 
-        singleShowData._embedded.cast.forEach(Element => {
-            const listNames = $("<li>").text(Element.person.name)
-            castNames.push(Element.person.name);
+        singleShowData._embedded.cast.forEach(element => {
+            const listNames = $("<li>").text(element.person.name)
+            console.log(listNames)
+            castNames.push(element.person.name);
             listactors.append(listNames);
 
         });
+
+       /* singleShowData._embedded.seasons.forEach(element => {
+            const seasonList = $("<li>").text(element.seasons.endDate)
+            seasonsYears.push(element.seasons.endDate);
+            seasons.append(seasonList);
+
+        });*/
 
         const foot = $(".foot");
         const cast = $(".cast");
